@@ -7,10 +7,7 @@
   <meta name="description" content="Full-stack developer and CS student portfolio.">
   
   <!-- ========== SECURITY HEADERS ========== -->
-  <!-- Prevent MIME type sniffing -->
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
-  
-  <!-- Strict CSP - No inline styles needed since all CSS is in <style> -->
   <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     style-src 'self' 'unsafe-inline';
@@ -25,22 +22,13 @@
     upgrade-insecure-requests;
     block-all-mixed-content;
   ">
-  
-  <!-- Force HTTPS -->
   <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
-  
-  <!-- Control referrer information -->
   <meta name="referrer" content="strict-origin-when-cross-origin">
-  
-  <!-- Disable browser features -->
   <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=()">
-  
-  <!-- Control caching -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   
-  <!-- ========== STYLES ========== -->
   <style>
     :root {
       --bg: #F6F6F3;
@@ -156,8 +144,6 @@
     }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
-    
-    /* ========== ANTI-CLICKJACKING ========== */
     body { display: block; }
   </style>
 </head>
@@ -221,6 +207,7 @@
       </div>
       <div class="grid">
 
+        <!-- Food-Del (unchanged) -->
         <div class="card">
           <div class="icon">F</div>
           <h3>Food-Del</h3>
@@ -229,20 +216,22 @@
           <div class="card-links"><a href="https://github.com/HamthanAhamed/food-del-full-stack" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
         </div>
 
+        <!-- Snake Game (Java) – NEW -->
         <div class="card">
-          <div class="icon">D</div>
-          <h3>Document RAG Pipeline</h3>
-          <p>Retrieval-augmented Q&A over local documents using OpenAI embeddings and FAISS.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">OpenAI API</span><span class="tag">FAISS</span></div>
-          <div class="card-links"><a href="https://github.com/" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
+          <div class="icon">🐍</div>
+          <h3>Snake Game (Java)</h3>
+          <p>Classic Snake game built with Java Swing. Smooth controls, score tracking, and progressive difficulty.</p>
+          <div class="tags"><span class="tag">Java</span><span class="tag">Swing</span><span class="tag">OOP</span></div>
+          <div class="card-links"><a href="https://github.com/HamthanAhamed/snake-game-java" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
         </div>
 
+        <!-- Image Search RAG System (replaces the two separate RAG projects) -->
         <div class="card">
-          <div class="icon">C</div>
-          <h3>CLIP Image Search</h3>
-          <p>Local image search matching natural-language queries to images using CLIP embeddings.</p>
-          <div class="tags"><span class="tag">Python</span><span class="tag">CLIP</span><span class="tag">PyTorch</span></div>
-          <div class="card-links"><a href="https://github.com/" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
+          <div class="icon">🖼️</div>
+          <h3>Image Search RAG System</h3>
+          <p>Local image retrieval using CLIP embeddings and FAISS. Query with natural language, get relevant images instantly.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">CLIP</span><span class="tag">FAISS</span><span class="tag">PyTorch</span></div>
+          <div class="card-links"><a href="https://github.com/HamthanAhamed/image-search-rag" target="_blank" rel="noopener noreferrer">Code ↗</a></div>
         </div>
 
       </div>
