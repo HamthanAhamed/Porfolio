@@ -75,6 +75,12 @@
     .btn.ghost:hover { border-color: var(--ink); transform: translateY(-2px); }
 
     .hero { padding: 90px 24px 70px; }
+    .hero .wrap {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
     .kicker {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 14px; font-weight: 600; color: var(--accent);
@@ -89,6 +95,33 @@
     .hero h1 .accent { color: var(--accent); }
     .hero p.lede { max-width: 52ch; font-size: 18px; color: var(--ink-soft); margin-bottom: 32px; }
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .hero-portrait {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      max-width: 320px;
+      justify-self: center;
+      border-radius: 24px;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      box-shadow: 0 1px 2px rgba(20,20,30,.04), 0 20px 40px -20px rgba(20,20,30,.20);
+    }
+    .hero-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .hero-portrait .fallback {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: 15px; color: var(--ink-soft);
+      background: linear-gradient(135deg, rgba(79,70,229,0.08), rgba(251,191,36,0.10));
+      text-align: center; padding: 24px;
+    }
 
     .section { padding: 64px 24px; }
     .section-head { margin-bottom: 36px; }
@@ -141,6 +174,10 @@
     @media (max-width: 720px) {
       nav ul { display: none; }
       .about-grid { grid-template-columns: 1fr; }
+      .hero .wrap { grid-template-columns: 1fr; text-align: center; }
+      .hero-portrait { justify-self: center; order: -1; margin-bottom: 12px; }
+      .hero p.lede { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
     }
     a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
@@ -164,12 +201,26 @@
 <main id="top">
   <section class="hero">
     <div class="wrap">
-      <span class="kicker"><span class="dot"></span>Open to internships</span>
-      <h1>I build full-stack apps<br>and <span class="accent">explore AI</span> systems.</h1>
-      <p class="lede">Computer Science student focused on end-to-end development — React/Node applications, and local RAG pipelines built with FAISS and CLIP.</p>
-      <div class="hero-actions">
-        <a class="btn primary" href="#projects">View projects</a>
-        <a class="btn ghost" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+      <div>
+        <span class="kicker"><span class="dot"></span>Open to internships</span>
+        <h1>I build full-stack apps<br>and <span class="accent">explore AI</span> systems.</h1>
+        <p class="lede">Computer Science student focused on end-to-end development — React/Node applications, and local RAG pipelines built with FAISS and CLIP.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View projects</a>
+          <a class="btn ghost" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img
+          src="image.png"
+          alt="Portrait of Ahamed M.A.H"
+          loading="lazy"
+          decoding="async"
+          width="320"
+          height="320"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+        >
+        <div class="fallback" style="display:none;">Add profile.jpg<br>to this folder</div>
       </div>
     </div>
   </section>
